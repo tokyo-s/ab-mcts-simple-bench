@@ -11,3 +11,8 @@ Grid: TypeAlias = List[List[int]]
 ARCProbData: TypeAlias = Dict[TaskType, List[Dict[GridType, Grid]]]
 
 ScorerType: TypeAlias = Literal["default", "verifier"]
+
+# New types for QA tasks
+QAOption: TypeAlias = Literal["A", "B", "C", "D", "E", "F"]
+QAProbData: TypeAlias = Dict[str, str | int]  # question_id, prompt, answer
+QADataset: TypeAlias = List[QAProbData]
