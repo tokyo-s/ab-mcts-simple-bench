@@ -32,7 +32,7 @@ run_experiment() {
     echo "Starting experiment for question $question_id"
     
     cd experiments/qa
-    python3 run.py \
+    uv run python run.py \
         question_id=$question_id \
         dataset_path="../../$DATASET_PATH" \
         max_num_nodes=$MAX_NUM_NODES \
@@ -57,4 +57,4 @@ echo "All QA experiments completed!"
 echo "Results saved in outputs/qa/${EXP_ID}/"
 echo ""
 echo "To process results, run:"
-echo "  python3 eval/proc_qa_results.py --exp_name $EXP_ID" 
+echo "  uv run python eval/proc_qa_results.py --exp_name $EXP_ID" 
